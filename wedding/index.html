@@ -12,7 +12,8 @@
     <meta property="fb:admins" content="100008676467394"/>
     <!-- Loader xoay -->
     <script src="https://kit.fontawesome.com/7e83b73089.js" crossorigin="anonymous"></script>
-
+    <!-- js nhập tên -->
+    <script src='js/sweetalert-dev.js'></script>
 
     <!-- Page Title -->
     <title>ChYến- Lovly Wedding </title>
@@ -188,8 +189,7 @@
 }
               
 </style>
-
-<body id="home" onload="thongbaopopup()" class="preloading2">
+<body id="home" onload="nhappass()" class="preloading2">
     <!-- #Bình luận FB --> 
 
   <div id="fb-root"></div>
@@ -206,9 +206,9 @@
     <!-- #popup khi gửi thông tin -->
     <div class="popup" id="popup" style="display:none;">
         <div class="popup-inner">
-            <h3>Cảm ơn Anh Chị đã gửi lời nhắn tham dự</h3>
+            <h3>Cảm ơn <span id="namene">'Ai Đó'</span> đã gửi lời nhắn tham dự</h3>
             <br>  
-            <p>Sự góp mặt của Anh Chị góp phần kiếm thêm thu nhập cho gia đình chúng em ^^</p>
+            <p>Sự góp mặt của <span id="namene2">'Ai Đó'</span> góp phần kiếm thêm thu nhập cho gia đình chúng mình ^^</p>
            <input type="button" name="Close" class="s3-btn-close" onclick="popupClose();" value="Ồ Kế">   
         </div>
     </div>
@@ -233,7 +233,7 @@
             </button>
 
             <div class="music-holder">
-                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1443689671&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe>
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1443689671&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe>
 
   
             </div>
@@ -255,6 +255,7 @@
             <div class="wedding-announcement">
                 <div class="couple-name-merried-text">
                     <h2 class="wow slideInUp" data-wow-duration="1s">ChYến</h2>
+
                     <div class="married-text wow fadeIn" data-wow-delay="1s">
                         <h4 class="">
                         <span class=" wow fadeInUp" data-wow-delay="1.05s">W</span>
@@ -344,6 +345,10 @@
                             <div class="details">
                                 <div class="details-inner">
                                     <span class="signature">Nguyễn Chiến</span>
+
+
+                                    <div>
+      </div>
                                     <p style="font-size: 14px;">Chú Rể</p>
                                     <p>
                                         16/04/1998 <br>
@@ -514,7 +519,7 @@
                         <div style="width: 100%; background-color: rgba(255, 255, 255, 0.8); padding: 10px; 
                         border-top-left-radius: 10px;
                          border-top-right-radius: 10px; ">
-                            <h2><span style="font-size: 25px; color: black">Sự góp mặt của anh chị, là vinh dự của chúng em ^^</span></h2>
+                            <div style="font-size: 25px; color: black">Cảm ơn <span style="font-size: 25px;" id="namene3">'Ai Đó'</span>, hãy nói gì đó ở phần bình luận này nhé ạ ^^</div>
                             <img src="images/blog/img-1.jpg" style="width: 100%">
                            <div class="fb-comments" data-href="https://nchiennb.github.io/nchiennb/wedding/" data-width="100%" data-numposts="8"></div>
 
@@ -1078,6 +1083,56 @@
 
 
 </body>
+<!-- js nhập tên người dùng -->
+<script>
+   // Thay đổi tên người đăng nhập bằng lệnh  div.innerHTML = 'Demo thay đổi nội dung thẻ div bằng Javascript tại Freetuts'; khi nhấn oki
+    var div = document.getElementById('namene');
+    var div2 = document.getElementById('namene2');
+    var div3 = document.getElementById('namene3');
+
+    
+  
+      // Sau khi load trang sẽ yêu cầu nhập mật khẩu
+  function nhappass() {
+                 
+                  swal({
+                  title: "Oh chúng ta lại gặp nhau rồi!",
+                  text: "Chẳng hay cao danh quý tánh của Vị đây là gì?",
+                  type: "input",
+                  showCancelButton: false, // Có hiển thị nút cancel không(true = có)
+                  closeOnConfirm: false, // Có thể tắt popup khi nhấp Ok không (true = có)
+                  showLoaderOnConfirm: true, // Hiển thị loading khi nhấp vào nút Ok
+                  animation: "slide-from-top", // Như tên của nó, popup sẽ slide from top
+                  inputPlaceholder: "Ta đây là..."
+
+              },
+
+
+        function (inputValue) {
+                   //alert(inputValue);
+                    if (inputValue == ""){ 
+                      var ttname = "Xin chào 'Ai đó'"; 
+                      var ttname2 = "'Ai đó' ơi, Mình sẽ liên hệ sớm nhất có thể\n 'Ai đó' có thể để lại thông tin liên hệ ở phần gửi lời nhắn để mình biết bạn đã ghé qua nhé ạ!";
+                      var aido = "Ai đó";
+                    } else {
+                    var ttname = "Xin chào " + inputValue;
+                    var ttname2 = inputValue +" ơi, Mình sẽ liên hệ sớm nhất có thể\n "+ inputValue+ " có thể để lại thông tin liên hệ ở phần gửi lời nhắn để mình biết bạn đã ghé qua nhé ạ!";
+                    var aido = inputValue;
+                    }
+                    div.innerHTML = aido;
+                    div2.innerHTML = aido;
+                    div3.innerHTML = aido;
+                    //alert(ttname);
+                    setTimeout(function() {
+                    swal(ttname, ttname2, "success");}, 500);
+              
+              });      
+
+      };
+
+
+
+   </script>
 
 <!-- Mirrored from irsfoundation.com/tf/templates/wedding/lovely-wedding/lovely-wedding/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 May 2018 09:09:09 GMT -->
 </html>
