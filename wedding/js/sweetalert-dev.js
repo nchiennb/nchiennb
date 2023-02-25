@@ -1305,13 +1305,5 @@ exports.colorLuminance = colorLuminance;
   }
 
 })(window, document);
- /*
-   * Use SweetAlert with RequireJS User clicked on "Confirm"/"OK"
-   */
- 
 
 
-function callham(){
-
-  alert("ttname");
-  }
