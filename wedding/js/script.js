@@ -761,23 +761,22 @@ function popupOpen() {
 var regExp = /^(0[23589][0-9]{8})$/;
 var inputsdt = document.getElementById("Reason").value;
   
+
+  
 if ($("#hoten").val() == ""){
   $("#hoten").css('box-shadow', '3px 0px red');
 } else 
-if ($("#Reason").val() == ""){
+if ($("#Reason").val() == "" ){
   $("#Reason").css('box-shadow', '3px 0px red');  
-  $("#hoten").css('box-shadow', 'none');
-} else 
-if (regExp.test(inputsdt)==false){
-    $("#Reason").css('box-shadow', '3px 0px red');  
-    $("#hoten").css('box-shadow', 'none');
-      event.target.setCustomValidity('SĐT Ứ đúng định dạng!');
+  $("#hoten").css('box-shadow', 'none'); 
+  
 } else 
 if ($("#Reason2").val() == ""){
   $("#Reason2").css('box-shadow', '3px 0px red'); 
     $("#hoten").css('box-shadow', 'none');
   $("#Reason").css('box-shadow', 'none');
 } else
+
 
 
 
