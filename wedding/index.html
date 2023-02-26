@@ -397,11 +397,11 @@
 
 
         <!-- start count-down-section -->
-        <section class="count-down-section section-padding parallax bgr" data-bg-image="images/page-title.jpg" data-speed="7">
+        <section class="count-down-section section-padding parallax" style="background-color: #5e9a8e" data-speed="7">
             <div class="container">
                 <div class="row">
                     <div class="col col-md-4">
-                        <h2 ><span>Hãy cùng đếm ngược.....</span> Đến ngày ấy <3</h2>
+                        <h2 style="font-size: 40px;"><span>Hãy cùng đếm ngược.....</span> Mà cần gì đếm vì có bộ đếm này rồi ^^</h2>
                        
                     </div>
 
@@ -515,7 +515,7 @@
 
 
         <!-- start cta -->
-        <section class="cta section-padding parallax" data-bg-image="images/footer-bg.jpg" data-speed="7">
+        <section class="cta section-padding parallax" style="background-color: #5e9a8e;" data-speed="7">
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
@@ -539,7 +539,7 @@
 
 
         <!-- start events-section -->
-        <section class="events-section section-padding" id="events">
+        <section class=" events-section section-padding" id="events" style="border-bottom: #2a4540 solid 5px;">
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
@@ -588,6 +588,7 @@
                     </div>
                 </div> <!-- end row -->
             </div> <!-- end container -->
+          
         </section>
         <!-- end events-section -->
 
@@ -678,7 +679,7 @@
         <!-- end gallery-section -->
 
 
-
+ 
 
         <!-- start rsvp-section data-bg-image="images/rsvp-bg.jpg"-->
         <section class="rsvp-section section-padding parallax"  data-speed="7" id="rsvp">
@@ -687,7 +688,7 @@
                     <div class="col col-xs-12">
                         <div class="section-title-white">
                             <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
-                            <h2>Join our party</h2>
+                            <h2>Messenger</h2>
                         </div>
                     </div>
                 </div>
@@ -697,7 +698,7 @@
 
                 <div class="row content">
                     <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        <p style="text-align: center;">Please reserve before December 16th, 2017.</p>
+                        <p style="text-align: center;"><span id="namene4">'Ai Đó'</span> vui lòng để lại lời nhắn ở đây nhé ^^</p>
                                         <script type="text/javascript">
                                     var submitted=false;
                                 </script>
@@ -796,6 +797,7 @@
     var div = document.getElementById('namene');
     var div2 = document.getElementById('namene2');
     var div3 = document.getElementById('namene3');
+    var div4 = document.getElementById('namene4');
 
     
   
@@ -829,6 +831,7 @@
                     div.innerHTML = aido;
                     div2.innerHTML = aido;
                     div3.innerHTML = aido;
+                    div4.innerHTML = aido;
                     //alert(ttname);
                     setTimeout(function() {
                     swal(ttname, ttname2, "success");}, 500);
