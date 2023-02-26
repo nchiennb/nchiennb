@@ -757,15 +757,26 @@
 // Popup open
 
 function popupOpen() {
+
+var regExp = /^(0[23589][0-9]{8})$/;
+var inputsdt = document.getElementById("Reason").value;
   
 if ($("#hoten").val() == ""){
   $("#hoten").css('box-shadow', '3px 0px red');
 } else 
 if ($("#Reason").val() == ""){
   $("#Reason").css('box-shadow', '3px 0px red');  
+  $("#hoten").css('box-shadow', 'none');
+} else 
+if (regExp.test(inputsdt)==false){
+    $("#Reason").css('box-shadow', '3px 0px red');  
+    $("#hoten").css('box-shadow', 'none');
+      event.target.setCustomValidity('SĐT Ứ đúng định dạng!');
 } else 
 if ($("#Reason2").val() == ""){
-  $("#Reason2").css('box-shadow', '3px 0px red');  
+  $("#Reason2").css('box-shadow', '3px 0px red'); 
+    $("#hoten").css('box-shadow', 'none');
+  $("#Reason").css('box-shadow', 'none');
 } else
 
 
@@ -788,8 +799,6 @@ document.getElementById("overlay2").style.display = "block";
 }
 
 
-
-
   
 // Popup Close
   
@@ -801,3 +810,8 @@ document.getElementById("overlay2").style.display = "none";
 
 }
 
+
+//var inputsdt = document.getElementById('Reason');
+
+//inputsdt.oninvalid = function(event) {
+ //   event.target.setCustomValidity('SĐT là dãy số 9-10 số, không khoảng trắng và ký tự!');
